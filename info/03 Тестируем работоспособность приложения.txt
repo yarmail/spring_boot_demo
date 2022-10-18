@@ -1,0 +1,37 @@
+03 Тестируем работоспособность приложения.txt
+
+Для проверки работоспособности конфигурации
+вставляем свой ключ     hello=myKey
+в файл конфигурации     application.properties
+
+---
+
+Создаем контроллер
+src/main/java/project/controllers/HelloController.java
+в папке controllers
+
+В контроллере:
+
+@Value("${hello}")
+private String hello;
+
+Инициализируем поле hello нашим ключом
+
+---
+
+Создаем представление
+в папке templates
+src/main/resources/templates/hello.html
+
+---
+
+Запускаем метод main
+в файле src/main/java/project/SpringBootDemoApplication.java
+
+---
+
+После того как все запустилось переходим в браузер
+и делаем запрос:
+http://localhost:8080/hello
+после чего мы должны увидеть содержание нашего шаблона
+hello.html
